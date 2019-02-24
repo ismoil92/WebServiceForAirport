@@ -1,0 +1,21 @@
+﻿@model WebServiceForAirport.Models.Information
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Веб сервис для Аэропортов</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <p>Code Airport Start:@Html.TextBoxFor(a=>a.Code_Airport_Start)</p>
+        <p>Code Airport Destination: @Html.TextBoxFor(a=>a.Code_Airport_Destination)</p>
+        <p>Date Start: </p>
+        <p>Date Destination: </p>
+       <input type="submit" value="Create Route-Match" width="50"/>
+    }
+</body>
+</html>

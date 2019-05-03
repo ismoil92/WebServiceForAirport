@@ -15,12 +15,18 @@ namespace WebServiceForAirport.Models
         /// <summary>
         /// 
         /// </summary>
-        [Key]
-        [ForeignKey("airport")]
         public int ID { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public Airport airport { get; set; }
+        public string NumberFlight { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string NumberBoard { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual Airport airport { get; set; }
     }
 }

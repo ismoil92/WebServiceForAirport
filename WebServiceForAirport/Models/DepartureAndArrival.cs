@@ -8,12 +8,12 @@ namespace WebServiceForAirport.Models
     /// <summary>
     /// 
     /// </summary>
-    public class Departure_Arrival
+    public class DepartureAndArrival
     {
         /// <summary>
         /// 
         /// </summary>
-        public int DepArrID { get; set; }
+        public int ID { get; set; }
         /// <summary>
         /// 
         /// </summary>
@@ -22,6 +22,13 @@ namespace WebServiceForAirport.Models
         /// 
         /// </summary>
         public string Arrival { get; set; }
-
+        /// <summary>
+        /// 
+        /// </summary>
+        public int? AirportID { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual Airport airport { get; set; }
     }
 }

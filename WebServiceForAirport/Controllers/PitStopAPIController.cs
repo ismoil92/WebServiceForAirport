@@ -5,30 +5,39 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using WebServiceForAirport.Models;
+using WebServiceForAirport.Repository;
 
 namespace WebServiceForAirport.Controllers
 {
     /// <summary>
     /// 
     /// </summary>
-    public class WebAPIController : ApiController
+    public class PitStopAPIController : ApiController
     {
+        IRepository<PitStop> repo;
+        /// <summary>
+        /// 
+        /// </summary>
+        public PitStopAPIController()
+        {
+            repo = new PitStopRepository();
+        }
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        public IEnumerable<Information> GetAll()
+        public IEnumerable<PitStop> GetAll()
         {
-            return null;
+            return repo.GetAll();
         }
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public Information GET(int id)
+        public PitStop GetById(int id)
         {
-            return null;
+            return repo.Get(id);
         }
     }
 }

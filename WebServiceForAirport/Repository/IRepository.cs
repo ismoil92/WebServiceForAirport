@@ -3,39 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WebServiceForAirport.Models;
 
 namespace WebServiceForAirport.Repository
 {
     /// <summary>
     /// 
     /// </summary>
-    public interface IRepositoryByAirportName:IDisposable
+   public interface IRepository<T>  :IDisposable where T:class
     {
         /// <summary>
         /// 
         /// </summary>
         /// <returns></returns>
-        IEnumerable<Airport> GetAllByAirportName();
+        IEnumerable<T> GetAll();
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Airport GetAirportNameByID(int id);
+        T Get(int id);
         /// <summary>
         /// 
         /// </summary>
-        void CreateAirportName();
+        /// <param name="t"></param>
+        /// <returns></returns>
+        void Create(T t);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="t"></param>
+        /// <returns></returns>
+        void Update(T t);
         /// <summary>
         /// 
         /// </summary>
         /// <param name="id"></param>
-        void EditAirportName(int id);
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="id"></param>
-        void DeleteAirportName(int id);
+        void Delete(int id);
     }
 }

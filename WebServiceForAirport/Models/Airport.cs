@@ -41,6 +41,22 @@ namespace WebServiceForAirport.Models
         /// <summary>
         /// 
         /// </summary>
-        public Information information { get; set; }
+        public virtual Information information { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual ICollection<DepartureAndArrival> DepArrList { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public virtual ICollection<PitStop> PitStopList { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public Airport()
+        {
+            DepArrList = new List<DepartureAndArrival>();
+            PitStopList = new List<PitStop>();
+        }
     }
 }
